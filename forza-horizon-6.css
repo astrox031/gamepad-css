@@ -3,68 +3,93 @@
    ULTIMATE NEON EDIT by ASTROX
    ========================================================== */
 
-/* ------------------------------
+/* ==========================================================
    GLOBAL
---------------------------------*/
+   ========================================================== */
+
 body {
+
     background: transparent !important;
-    margin: 0 auto;
-    overflow: hidden;
+    margin: 0 auto !important;
+    overflow: hidden !important;
 }
 
-/* ------------------------------
-   CONTROLE PRINCIPAL
---------------------------------*/
+/* ==========================================================
+   CONTROLLER
+   ========================================================== */
+
 .controller.xbox,
 .custom.controller,
 .custom {
-    background: transparent !important;
+
+    position: relative !important;
 
     width: 590px !important;
     height: 390px !important;
 
-    position: relative;
+    background: transparent !important;
 
     transform: scale(1.02);
 
-    animation: forzaGlow 4s infinite alternate ease-in-out;
+    animation:
+        forzaGlow 4s infinite alternate ease-in-out;
 
     transition:
         transform 0.15s ease,
         filter 0.15s ease;
-
-    backdrop-filter: blur(2px);
 }
 
-/* ------------------------------
-   BODY / PNG CUSTOM
---------------------------------*/
+/* ==========================================================
+   SVG VISÍVEL
+   ========================================================== */
+
+.controller.xbox svg,
+.custom svg {
+
+    opacity: 1 !important;
+}
+
+/* ==========================================================
+   BASE CUSTOM PNG
+   ========================================================== */
+
 .controller.xbox .base,
 .custom .base {
 
-    background-image: url('https://stock-checker.com/uploads/XboxControllerFH6LE.png') !important;
+    position: absolute !important;
 
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
+    top: 0 !important;
+    left: 0 !important;
 
     width: 100% !important;
     height: 100% !important;
 
-    position: absolute;
-
-    top: 0;
-    left: 0;
+    background:
+        url('https://cdn.jsdelivr.net/gh/astrox031/gamepad-css@main/XboxControllerFH6LE.png?v=6')
+        center center / contain no-repeat !important;
 
     opacity: 1 !important;
 
-    fill: transparent !important;
-    stroke: none !important;
+    z-index: 1 !important;
 }
 
-/* ------------------------------
-   ESCONDE ELEMENTOS PADRÃO
---------------------------------*/
+/* ==========================================================
+   ESCONDE VISUAL ORIGINAL
+   ========================================================== */
+
+.controller.xbox .base path,
+.controller.xbox .base polygon,
+.controller.xbox .base rect,
+.controller.xbox .base circle {
+
+    fill: transparent !important;
+    stroke: transparent !important;
+}
+
+/* ==========================================================
+   BOTÕES PADRÃO
+   ========================================================== */
+
 .controller.xbox .button,
 .custom .button,
 
@@ -75,118 +100,122 @@ body {
 .custom .trigger,
 
 .controller.xbox .meta,
-.custom .meta,
+.custom .meta {
 
-.controller.xbox .dpad div,
-.custom .dpad div,
-
-.custom .dpad-arrow {
-
-    opacity: 0 !important;
-
-    background: transparent !important;
-
-    fill: transparent !important;
-
-    stroke: none !important;
-
-    transition: all 0.08s ease;
+    transition:
+        all 0.08s ease !important;
 }
 
 /* ==========================================================
-   BOTÕES ABXY
+   A BUTTON
    ========================================================== */
 
-/* ---------------- A BUTTON ---------------- */
 .controller.xbox .button.a.pressed,
 .custom .button.a.pressed,
 .controller.xbox .a.pressed,
 .custom .a.pressed {
 
-    opacity: 0.88 !important;
+    opacity: 1 !important;
 
-    background: rgba(0,255,153,0.45) !important;
-    fill: rgba(0,255,153,0.45) !important;
-
-    stroke: #00ff99 !important;
-    stroke-width: 2px !important;
+    background:
+        rgba(0,255,153,0.45) !important;
 
     border-radius: 50% !important;
 
-    transform: scale(1.12);
+    transform: scale(1.15);
 
     box-shadow:
         0 0 12px #00ff99,
-        0 0 20px rgba(0,255,153,0.55) !important;
+        0 0 22px rgba(0,255,153,0.75);
+
+    filter:
+        drop-shadow(0 0 8px #00ff99);
+
+    z-index: 50 !important;
 }
 
-/* ---------------- B BUTTON ---------------- */
+/* ==========================================================
+   B BUTTON
+   ========================================================== */
+
 .controller.xbox .button.b.pressed,
 .custom .button.b.pressed,
 .controller.xbox .b.pressed,
 .custom .b.pressed {
 
-    opacity: 0.88 !important;
+    opacity: 1 !important;
 
-    background: rgba(255,0,170,0.45) !important;
-    fill: rgba(255,0,170,0.45) !important;
-
-    stroke: #ff00aa !important;
-    stroke-width: 2px !important;
+    background:
+        rgba(255,0,170,0.45) !important;
 
     border-radius: 50% !important;
 
-    transform: scale(1.12);
+    transform: scale(1.15);
 
     box-shadow:
         0 0 12px #ff00aa,
-        0 0 20px rgba(255,0,170,0.55) !important;
+        0 0 22px rgba(255,0,170,0.75);
+
+    filter:
+        drop-shadow(0 0 8px #ff00aa);
+
+    z-index: 50 !important;
 }
 
-/* ---------------- X BUTTON ---------------- */
+/* ==========================================================
+   X BUTTON
+   ========================================================== */
+
 .controller.xbox .button.x.pressed,
 .custom .button.x.pressed,
 .controller.xbox .x.pressed,
 .custom .x.pressed {
 
-    opacity: 0.88 !important;
+    opacity: 1 !important;
 
-    background: rgba(0,229,255,0.45) !important;
-    fill: rgba(0,229,255,0.45) !important;
-
-    stroke: #00e5ff !important;
-    stroke-width: 2px !important;
+    background:
+        rgba(0,229,255,0.45) !important;
 
     border-radius: 50% !important;
 
-    transform: scale(1.12);
+    transform: scale(1.15);
 
     box-shadow:
         0 0 12px #00e5ff,
-        0 0 20px rgba(0,229,255,0.55) !important;
+        0 0 22px rgba(0,229,255,0.75);
+
+    filter:
+        drop-shadow(0 0 8px #00e5ff);
+
+    z-index: 50 !important;
 }
 
-/* ---------------- Y BUTTON ---------------- */
+/* ==========================================================
+   Y BUTTON
+   ========================================================== */
+
 .controller.xbox .button.y.pressed,
 .custom .button.y.pressed,
 .controller.xbox .y.pressed,
 .custom .y.pressed {
 
-    opacity: 0.88 !important;
+    opacity: 1 !important;
 
-    background: rgba(255,255,255,0.45) !important;
-    fill: rgba(255,255,255,0.45) !important;
-
-    stroke: #ffffff !important;
-    stroke-width: 2px !important;
+    background:
+        rgba(255,255,255,0.45) !important;
 
     border-radius: 50% !important;
 
-    transform: scale(1.12);
+    transform: scale(1.15);
 
     box-shadow:
         0 0 12px #ffffff,
-        0 0 20px rgba(255,255,255,0.55) !important;
+        0 0 22px rgba(255,255,255,0.75);
+
+    filter:
+        drop-shadow(0 0 8px #ffffff);
+
+    z-index: 50 !important;
 }
 
 /* ==========================================================
@@ -196,35 +225,35 @@ body {
 .controller.xbox .stick,
 .custom .stick {
 
-    opacity: 0.92 !important;
+    opacity: 0.95 !important;
 
-    background: #ff00aa !important;
-    fill: #ff00aa !important;
+    background:
+        #ff00aa !important;
 
-    border: 3px solid #00ff99 !important;
-
-    stroke: #00ff99 !important;
-    stroke-width: 3px !important;
+    border:
+        3px solid #00ff99 !important;
 
     border-radius: 50% !important;
 
     box-shadow:
-        0 0 8px rgba(255,0,170,0.45) !important;
+        0 0 10px rgba(255,0,170,0.55);
 
     transition:
         transform 0.03s linear,
         box-shadow 0.08s ease;
+
+    z-index: 40 !important;
 }
 
 .controller.xbox .stick.pressed,
 .custom .stick.pressed {
 
-    background: #ff33bb !important;
-    fill: #ff33bb !important;
+    background:
+        #ff33bb !important;
 
     box-shadow:
-        0 0 12px #ff00aa,
-        0 0 20px #00e5ff !important;
+        0 0 14px #ff00aa,
+        0 0 24px #00e5ff !important;
 }
 
 /* ==========================================================
@@ -234,52 +263,39 @@ body {
 .controller.xbox .dpad .pressed,
 .custom .dpad .pressed,
 
-.controller.xbox .dpad.pressed,
-.custom .dpad.pressed,
-
 .controller.xbox .dpad-base.pressed,
-.custom .dpad-base.pressed,
+.custom .dpad-base.pressed {
 
-.custom .dpad .up.pressed,
-.custom .dpad .down.pressed,
-.custom .dpad .left.pressed,
-.custom .dpad .right.pressed {
+    opacity: 0.90 !important;
 
-    opacity: 0.82 !important;
-
-    background: rgba(0,229,255,0.5) !important;
-    fill: rgba(0,229,255,0.5) !important;
-
-    stroke: #00e5ff !important;
-    stroke-width: 1.5px !important;
+    background:
+        rgba(0,229,255,0.50) !important;
 
     filter:
-        drop-shadow(0 0 6px #00e5ff) !important;
+        drop-shadow(0 0 8px #00e5ff);
+
+    z-index: 45 !important;
 }
 
 /* ==========================================================
-   TRIGGERS / BUMPERS
+   BUMPERS / TRIGGERS
    ========================================================== */
 
 .controller.xbox .bumper.pressed,
 .custom .bumper.pressed,
 
 .controller.xbox .trigger.pressed,
-.custom .trigger.pressed,
+.custom .trigger.pressed {
 
-.controller.xbox .trigger-button.pressed,
-.custom .trigger-button.pressed {
+    opacity: 0.95 !important;
 
-    opacity: 0.82 !important;
-
-    background: rgba(0,229,255,0.45) !important;
-    fill: rgba(0,229,255,0.45) !important;
-
-    stroke: #00e5ff !important;
-    stroke-width: 1.5px !important;
+    background:
+        rgba(0,229,255,0.50) !important;
 
     filter:
-        drop-shadow(0 0 8px #00e5ff) !important;
+        drop-shadow(0 0 8px #00e5ff);
+
+    z-index: 45 !important;
 }
 
 /* ==========================================================
@@ -289,23 +305,25 @@ body {
 .controller.xbox .meta.pressed,
 .custom .meta.pressed {
 
-    opacity: 0.88 !important;
+    opacity: 1 !important;
 
-    background: rgba(0,255,153,0.45) !important;
-    fill: rgba(0,255,153,0.45) !important;
-
-    stroke: #00ff99 !important;
-    stroke-width: 2px !important;
+    background:
+        rgba(0,255,153,0.45) !important;
 
     border-radius: 50% !important;
 
     box-shadow:
         0 0 12px #00ff99,
-        0 0 20px rgba(255,255,255,0.45) !important;
+        0 0 24px rgba(255,255,255,0.45);
+
+    filter:
+        drop-shadow(0 0 8px #00ff99);
+
+    z-index: 60 !important;
 }
 
 /* ==========================================================
-   ANIMAÇÃO FORZA GLOW
+   FORZA GLOW
    ========================================================== */
 
 @keyframes forzaGlow {
@@ -314,13 +332,13 @@ body {
 
         filter:
             drop-shadow(0 0 10px rgba(255,0,170,0.35))
-            drop-shadow(0 0 16px rgba(0,229,255,0.35));
+            drop-shadow(0 0 18px rgba(0,229,255,0.35));
     }
 
     100% {
 
         filter:
-            drop-shadow(0 0 18px rgba(255,0,170,0.60))
-            drop-shadow(0 0 20px rgba(0,229,255,0.55));
+            drop-shadow(0 0 20px rgba(255,0,170,0.65))
+            drop-shadow(0 0 24px rgba(0,229,255,0.60));
     }
 }
